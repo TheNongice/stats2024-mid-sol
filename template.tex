@@ -1,0 +1,132 @@
+% !TEX program = xelatex
+\documentclass[11pt]{scrartcl}
+
+% Compile with XeLaTeX (not pdflatex) -- required for Thai script shaping.
+% e.g. `xelatex template.tex`, or `latexmk -xelatex template.tex`
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text}
+% Main font is left unset, so English/Latin text keeps LaTeX's normal default
+% (Latin Modern -- the standard Computer Modern look).
+
+% TH Sarabun New is used ONLY for Thai text. Swap for e.g. "Leelawadee UI",
+% "Angsana New", "Cordia New" if preferred.
+\newfontfamily\thaifont{TH Sarabun New}[Scale=1.4]
+
+% ucharclasses automatically switches to \thaifont whenever a character from
+% the Thai Unicode block is encountered, and back to \normalfont as soon as
+% the text leaves that block -- so English text and numbers stay in the
+% default font with no manual markup needed.
+\usepackage{ucharclasses}
+\setTransitionsFor{Thai}{\thaifont}{\normalfont}
+
+% Enables correct automatic line-breaking for Thai (no spaces between words),
+% using XeTeX's built-in ICU line breaker. Does not affect English text.
+\XeTeXlinebreaklocale "th_TH"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 1pt
+
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+
+% Make \binom always render at display size (like \dbinom), even inline.
+\renewcommand{\binom}[2]{\genfrac{(}{)}{0pt}{0}{#1}{#2}}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usepackage{graphicx}
+\graphicspath{{figs/}}
+
+% Running head on every page: page number top-left, author name top-right.
+\usepackage[headsepline]{scrlayer-scrpage}
+\clearpairofpagestyles          % wipe KOMA's defaults (incl. the centred page number in the footer)
+\lohead{\thepage}
+\rohead{Anakawee Chujinda}
+\pagestyle{scrheadings}
+\renewcommand*{\pagemark}{\thepage}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\definecolor{probframe}{RGB}{30,30,30}
+\definecolor{probback}{RGB}{246,246,246}
+\definecolor{solframe}{RGB}{21,67,130}
+\definecolor{solback}{RGB}{237,244,255}
+
+\newtcolorbox{problembox}[1]{
+  enhanced, breakable,
+  colback=probback, colframe=probframe,
+  boxrule=0.6pt, arc=1.5pt,
+  top=3pt, bottom=3pt, left=7pt, right=7pt,
+  fonttitle=\bfseries,
+  coltitle=white, colbacktitle=probframe,
+  title={#1}
+}
+
+\newtcolorbox{solutionbox}{
+  enhanced, breakable,
+  colback=solback, colframe=solframe,
+  boxrule=0.6pt, arc=1.5pt,
+  top=3pt, bottom=3pt, left=7pt, right=7pt,
+  fonttitle=\bfseries,
+  coltitle=white, colbacktitle=solframe,
+  title={Solution}
+}
+
+\newlist{choices}{enumerate}{1}
+\setlist[choices,1]{label=\arabic*), itemsep=1pt, topsep=3pt, leftmargin=2.4em}
+
+\newlist{substmt}{enumerate}{1}
+\setlist[substmt,1]{label=(\roman*), itemsep=1pt, topsep=3pt, leftmargin=2.6em}
+
+\newcommand{\groupctx}[2]{\bigskip\noindent\textbf{Questions #1.} \textit{#2}\par\medskip}
+\newcommand{\ans}[1]{\par\noindent\textbf{Answer: #1}\par}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries TITLE}\\[4pt]
+{\large KUY}\\[2pt]
+{AUTHOR}
+\end{center}
+
+\bigskip
+\hrule
+\bigskip
+
+
+\bigskip
+
+% ---------------------------------------------------------------------------
+% Shared context for a block of questions (optional):
+% \groupctx{1--3}{Context text shared by problems 1 through 3.}
+% ---------------------------------------------------------------------------
+
+\begin{problembox}{Problem 1}
+Problem statement here.
+
+% Optional (i)/(ii)/(iii) sub-statements:
+% \begin{substmt}
+% \item First statement.
+% \item Second statement.
+% \end{substmt}
+
+\begin{choices}
+\item Choice one
+\item Choice two
+\item Choice three
+\item Choice four
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  Solution text here (Thai or English).
+  \begin{align*}
+    a &= b \\
+      &= c
+  \end{align*}
+  ตอบ $\boxed{1)}$
+\end{solutionbox}
+
+
+\end{document}

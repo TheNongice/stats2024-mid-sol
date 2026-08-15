@@ -578,6 +578,78 @@ The CU equestrian club has 12 members. 3 of them are first-year students, 4 are 
   ตอบ $\boxed{3)}$
 \end{solutionbox}
 
+\begin{problembox}{Problem 17}
+  63\% of CEDT students pass both the midterm and final exams of statistics class. Among those who pass the midterm exam, 90\% of them also pass the final exam. What percentage of CEDT students pass the midterm exam?
+  
+  \begin{choices}
+  \item 53\%
+  \item 56.7\%
+  \item 70\%
+  \item 73\%
+  \end{choices}
+\end{problembox}
+
+(Solution อยู่หน้าถัดไป)
+\newpage
+
+\begin{solutionbox}
+  \begin{flushleft}
+    $\begin{aligned}
+      \text{กำหนดให้ } M &:= \text{นิสิตสอบผ่าน Midterm} \\
+      F &:= \text{นิสิตสอบผ่าน Final}
+    \end{aligned}$
+  \end{flushleft}
+
+  จากโจทย์ระบุว่า $P(F \cap M) = 0.63, P(F|M) = 0.9$ โจทย์ต้องการทราบ $P(M)$ โดยสามารถหาได้โดยใช้ Bayes Theorem ได้ดังนี้
+  \begin{align*}
+    P(F|M) &= \frac{P(M|F)P(F)}{P(M)} \\
+    &= \frac{P(M \cap F)}{P(M)} \\
+  \end{align*}
+  ทำการแทนค่าตัวแปรต่าง ๆ และแก้สมการจึงจะได้ว่า
+  \begin{align*}
+      0.9  &= \frac{0.63}{P(M)} \\
+      P(M) &= 0.7 \text{ (หรือ 70\%)}
+  \end{align*}
+
+  ตอบ $\boxed{3)}$
+\end{solutionbox}
+
+\begin{problembox}{Problem 19}
+  Among all companies in the stock market, 20\% are large companies, 30\% are medium companies, and 50\% are small companies. Last year, the stock price of 80\% of large companies, 70\% of medium companies, and 30\% of small companies went up. In total, the stock price of what percentage of companies in the stock market went up last year?
+  
+  \begin{choices}
+  \item 52\%
+  \item 56\%
+  \item 60\%
+  \item 64\%
+  \end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+
+  \underline{{\textbf{Solution-1}}}: หลักการคูณอัตราส่วน (Ratio)
+
+  NEED\_HELP: anyone pls help me. i can't describe it by myself! \texttt{:(}
+  
+  \underline{{\textbf{Solution-2}}}: หลักการ Law of Total Probability \& Bayes Theorem
+
+  \begin{flushleft}
+    $\begin{aligned}
+      \text{กำหนดให้ } L &:= \text{บริษัทขนาดใหญ่} &\qquad M &:= \text{บริษัทขนาดกลาง} \\
+      S &:= \text{บริษัทขนาดเล็ก} &\qquad U &:= \text{หุ้นบริษัทเพิ่มขึ้น}
+    \end{aligned}$
+  \end{flushleft}
+  โจทย์ต้องการทราบค่า $P(U)$ หาได้โดยใช้หลักการ Law of Total Probability ดังนี้
+  \begin{align*}
+    P(U)  &= P(U|L)P(L) + P(U|M)P(M) + P(U|S)P(S) \\
+          &= 0.8(0.2) + 0.7(0.3) + 0.3(0.5) \\
+          &= 0.52
+  \end{align*}
+
+  ตอบ $\boxed{1)}$
+\end{solutionbox}
+
+
 \groupctx{29--30}{Students in a particular university are either in the CEDT or CP program. 60\% of CEDT students and 30\% of CP students can write JavaScript. Overall, 48\% of students in this university can write JavaScript.}
  
 \begin{problembox}{Problem 29}
@@ -649,31 +721,412 @@ If a student cannot write JavaScript, what is the probability that this student 
   เราสามารถหาค่าของ $P(J'|A)$ ได้หากทราบค่า $P(J|A)$ โดยการนำ $1 - P(J|A) = 1-0.6 = 0.4$
 \end{solutionbox}
 
-\begin{problembox}{Problem 1}
-Problem statement here.
-
-% Optional (i)/(ii)/(iii) sub-statements:
-% \begin{substmt}
-% \item First statement.
-% \item Second statement.
-% \end{substmt}
-
+\begin{problembox}{Problem 31}
+Which of the following is NOT a random variable?
+ 
 \begin{choices}
-\item Choice one
-\item Choice two
-\item Choice three
-\item Choice four
+\item The face value of a die (singular form of dice).
+\item The hand of a poker.
+\item The result of a quadratic formula.
+\item The lottery outcome.
 \end{choices}
 \end{problembox}
 
 \begin{solutionbox}
-  Solution text here (Thai or English).
+  Random Variable (หรือตัวแปรสุ่ม) ฟังก์ชันจาก Sample Space ของการทดลองสุ่มไปยัง Set ของจำนวนจริง
+  ซึ่ง Choice 3) ไม่สามารถ mapping ไปยัง Set ของจำนวนจริงได้โดยตรงเพราะ\textbf{ผลลัพธ์ของสมการกำลังสองนั้นมีค่าที่เป็นทั้งบวกและลบ}
+
+  ตอบ $\boxed{3)}$
+\end{solutionbox}
+
+\begin{problembox}{Problem 32}
+What does the following random variable represent?
+\[
+\begin{array}{c|cccccc}
+X & 1 & 2 & 3 & 4 & 5 & 6 \\
+\hline
+\text{pmf} & 1/6 & 1/6 & 1/6 & 1/6 & 1/6 & 1/6
+\end{array}
+\]
+ 
+\begin{choices}
+\item A die (singular form of dice).
+\item A coin.
+\item A card in a deck.
+\item A telephone number.
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  ข้อนี้ตรงกับเหตุการณ์ของ Choice 1) มากที่สุดเพราะมีจำนวนเหตุการณ์ที่เกิดขึ้นได้มากที่สุด 6 เหตุการณ์
+  และทุกเหตุการณ์มีโอกาสเกิดเท่ากัน นั่นคือลูกเต๋าแต่ละหน้ามีโอกาสออกแต่ละแบบอยู่ที่ $\frac{1}{6}$
+
+  ตอบ $\boxed{1)}$
+\end{solutionbox}
+
+\groupctx{33--36}{Use the following table.
+\[
+\begin{array}{c|cccccc}
+X & 1 & 2 & 3 & 4 & 5 & 6 \\
+\hline
+\text{pmf} & 1/12 & 2/12 & 1/12 & 5/12 & a & 1/12 \\
+\text{cdf} & 1/12 & b & 4/12 & 9/12 & 11/12 & 12/12
+\end{array}
+\]}
+ 
+\begin{problembox}{Problem 33}
+What is the value of $a$?
+ 
+\begin{choices}
+\item $1/12$
+\item $2/12$
+\item $3/12$
+\item $4/12$
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  หาค่าของ $a$ ได้โดยอาศัยสมบัติของการเปลี่ยนค่าตัวแปรสุ่มระหว่าง $4 \Rightarrow 5$ ของ $cdf$
+  จึงทำให้ทราบได้ว่า $pmf$ ของ $P(X=5)$ คิดได้จาก $cdf$ โดย $\frac{11}{12}-\frac{9}{12}=\frac{2}{12}$
+  
+  ตอบ $\boxed{2)}$
+\end{solutionbox}
+ 
+\begin{problembox}{Problem 34}
+What is the value of $b$?
+ 
+\begin{choices}
+\item $1/12$
+\item $2/12$
+\item $3/12$
+\item $4/12$
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  หาค่าของ $a$ ได้โดยอาศัยสมบัติของการเปลี่ยนค่าตัวแปรสุ่มระหว่าง $1 \Rightarrow 2$ ของ $pmf$
+  จึงทำให้ทราบได้ว่า $cdf$ ของ $P(X=2)$ คิดได้จาก $pmf$ โดย $\frac{2}{12}-\frac{1}{12}=\frac{1}{12}$
+
+  ตอบ $\boxed{1)}$
+\end{solutionbox}
+ 
+\begin{problembox}{Problem 35}
+What is the value of pmf $p(X = 3.5)$?
+ 
+\begin{choices}
+\item $-1/6$
+\item $0$
+\item $1/6$
+\item None of above.
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  ตารางดังกล่าวเป็น Discrete Random Variable ทำให้ไม่มีค่า ณ ตัวเลขที่ไม่ได้ปรากฏในตาราง
+
+  ตอบ $\boxed{4)}$
+\end{solutionbox}
+ 
+\begin{problembox}{Problem 36}
+What is the expected value of this random variable?
+ 
+\begin{choices}
+\item 3.667
+\item 7.333
+\item 3.250
+\item 6.500
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  สามารถคำนวณค่า Expected Value (หรือ $E[X]$) โดยใช้สมการทางคณิตศาสตร์คือ...
   \begin{align*}
-    a &= b \\
-      &= c
+    E[X] &= \sum_{\text{x } \in \text{ range(X)}} x \cdot P(X=x)
+  \end{align*}
+  ดังนั้นจึงสามารถคำนวณได้ดังนี้...
+  \begin{align*}
+    E[X] &= 1(\frac{1}{12}) + 2(\frac{2}{12}) + 3(\frac{1}{12}) + 4(\frac{5}{12}) + 5(\frac{2}{12}) + 6(\frac{1}{12}) \\
+        &= \frac{1}{12} + \frac{4}{12} + \frac{3}{12} + \frac{20}{12} + \frac{10}{12} + \frac{6}{12} \\
+        &= \frac{44}{12} \\
+        &\approx 3.666\overline{6} \; (\approx 3.667)
+  \end{align*}
+
+  ตอบ $\boxed{1)}$
+\end{solutionbox}
+
+\begin{problembox}{Problem 37}
+Which random variable CANNOT be modeled with Bernoulli distribution?
+ 
+\begin{choices}
+\item HEAD or TAIL of a coin.
+\item Whether a person has no phone, a feature phone, or a smart phone.
+\item Throw a die (singular form of dice). Did you get HIGH face (4,5,6) or LOW face (1,2,3)?
+\item Whether you answer this question correctly or not.
+\end{choices}
+\end{problembox}
+ 
+\begin{solutionbox}
+  Bernoulli distribution คือการแจกแจงความน่าจะเป็นของเหตุการณ์ที่เกี่ยวกับผลลัพธ์การทดลอง/สังเกต 
+  ซึ่งต้องมีผลลัพธ์เพียง 2 อย่างคือสำเร็จ/ล้มเหลวเท่านั้น
+
+  จาก Choice ที่มีให้จึงพบว่า \textbf{2)} ไม่สามารถนำมาใช้กับโจทย์ประเภท Bernoulli distribution มากที่สุดเพราะ\textbf{ผลลัพธ์ที่ได้จากบันทึก}/\textbf{สังเกตมีมากกว่า 2} \textbf{แบบ}
+
+  ตอบ $\boxed{2)}$
+\end{solutionbox}
+
+\begin{problembox}{Problem 38}
+Which random variable CANNOT be modeled with Binomial distribution?
+ 
+\begin{choices}
+\item HEAD or TAIL of a coin.
+\item Number of HEADs when throwing multiple coins.
+\item The number of people having COVID-19 in the entire population.
+\item All of above can be modelled using Binomial distribution.
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  Binomial distribution คือการแจกแจงความน่าจะเป็นของการเกิดเหตุการณ์ที่จะสำเร็จ $X$ ครั้ง จากการทดลอง $n$ ครั้ง และ\textbf{โอกาสในการลองที่จะลองต้องมีโอกาสที่เท่ากันในทุกเหตุการณ์เสมอ}
+
+  จาก Choice ที่มีให้จึงพบว่าทุกข้อสามารถใช้ Binomial distribution ทั้งหมดเพราะทุกอันข้างต้นสามารหาและใช้ถูกหาโดยอาศัยความน่าจะเป็นที่จะสำเร็จ/ล้มเหลวเท่ากันเสมอในทุกเวลา
+
+  ตอบ $\boxed{4)}$
+\end{solutionbox}
+ 
+\begin{problembox}{Problem 39}
+Can the number of question YOU answered correctly on this test be modeled using a Binomial distribution?
+ 
+\begin{choices}
+\item Yes. It is a sum of multiple trials.
+\item Yes. It is the number of successful challenges.
+\item No. Each problem has different probability of you answering correctly.
+\item No. Binomial can only be modelled when the probability of the challenge is known.
+\end{choices}
+\end{problembox}
+ 
+\begin{solutionbox}
+  ข้อนี้ Choice \textbf{3)} เป็นเพียงข้อเดียวไม่สามารถใช้งาน Binomial distribution ได้เพราะโอกาสในการตอบแต่ละข้อมีค่าที่ไม่เท่ากัน (ตอบถูก +1 ตอบผิด -0.5)
+
+  ตอบ $\boxed{3)}$
+\end{solutionbox}
+
+\begin{problembox}{Problem 40}
+Which random variable CANNOT be modeled using Uniform distribution?
+ 
+\begin{choices}
+\item The result of throwing a die (singular form of dice).
+\item The sum of the results from throwing two dice.
+\item HEAD or TAIL of a coin.
+\item The result of a lottery.
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  Uniform distribution คือการแจกแจงความน่าจะเป็นในทุก ๆ เหตุการณ์มีค่าเท่ากันเสมอตลอดเวลา (เช่น ทอยเหรียญและโยนลูกเต๋าที่ยุติธรรม)
+
+  จาก Choice ที่มีให้จึงพบว่า \textbf{2)} ไม่สามารถนำมาใช้กับโจทย์ประเภท Uniform distribution มากที่สุด
+  เพราะผลลัพธ์ที่เกิดขึ้นจากการรวมหน้าบนลูกเต๋าแต่ละชุดมีค่าไม่เท่ากัน เช่น $n(E) \text{ ของ } (1,3) \neq n(E) \text{ ของ } (2,4)$
+  
+  ตอบ $\boxed{2)}$
+\end{solutionbox}
+
+\groupctx{41--42}{Use the following table.
+\[
+\begin{array}{c|cccc}
+X & 1 & 2 & 3 & 4 \\
+\hline
+\text{pmf} & 1/6 & 2/6 & 1/6 & 2/6
+\end{array}
+\]}
+ 
+\begin{problembox}{Problem 41}
+What is $E(X)$?
+ 
+\begin{choices}
+\item 2.333
+\item 2.500
+\item 2.667
+\item 3.000
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  สามารถคำนวณค่า Expected Value (หรือ $E[X]$) โดยใช้สมการทางคณิตศาสตร์คือ...
+  \begin{align*}
+    E[X] &= \sum_{\text{x } \in \text{ range(X)}} x \cdot P(X=x)
+  \end{align*}
+  ดังนั้นจึงสามารถคำนวณได้ดังนี้...
+  \begin{align*}
+    E[X] &= 1(\frac{1}{6}) + 2(\frac{2}{6}) + 3(\frac{1}{6}) + 4(\frac{2}{6}) \\
+        &= \frac{1}{6} + \frac{4}{6} + \frac{3}{6} + \frac{8}{6} \\
+        &= \frac{16}{6} \\
+        &\approx 2.666\overline{6} \; (\approx 2.667)
+  \end{align*}
+
+  ตอบ $\boxed{3)}$
+\end{solutionbox}
+
+(โจทย์ และ Solution ข้อที่ 42 อยู่หน้าถัดไป)
+
+\newpage
+
+\begin{problembox}{Problem 42}
+What is $E(X^2)$?
+ 
+\begin{choices}
+\item 6.333
+\item 7.333
+\item 8.333
+\item 9.333
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  สามารถคำนวณค่า Expected Value (หรือ $E[X]$) โดยใช้สมการทางคณิตศาสตร์คือ...
+  \begin{align*}
+    E[X] &= \sum_{\text{x } \in \text{ range(X)}} \boldsymbol{x^2} \cdot P(X=x)
+  \end{align*}
+  ดังนั้นจึงสามารถคำนวณได้ดังนี้...
+  \begin{align*}
+    E[X] &= 1^2(\frac{1}{6}) + 2^2(\frac{2}{6}) + 3^2(\frac{1}{6}) + 4^2(\frac{2}{6}) \\
+        &= \frac{1}{6} + \frac{8}{6} + \frac{9}{6} + \frac{32}{6} \\
+        &= \frac{50}{6} \\
+        &\approx 8.333\overline{3}
+  \end{align*}
+
+  ตอบ $\boxed{3)}$
+\end{solutionbox}
+
+\begin{problembox}{Problem 43}
+Given a random variable $X$ and $Y = X^2$. Assume that $E(X) = 5$ and $E(Y) = 25$, what is $\text{Var}(X)$?
+ 
+\begin{choices}
+\item 0
+\item 20
+\item 30
+\item Not enough information.
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  สามารถคำนวณค่า Variance (หรือ $Var(X)$) โดยใช้สมการทางคณิตศาสตร์คือ...
+  \begin{align*}
+    Var(X) &= E[X^2] - (E[X])^2
+  \end{align*}
+  จากที่โจทย์กำหนเทำให้ตอนนี้เราทราบว่า $E(X)=5, E(Y)=E(X^2)=25$ ดังนั้นเราสามารถคำนวณ $Var(X)$ ดังนี้
+  \begin{align*}
+    Var(X) &= 25 - (5)^2 \\
+            &= 0 \\
+  \end{align*}
+
+  ตอบ $\boxed{1)}$
+\end{solutionbox}
+ 
+\begin{problembox}{Problem 44}
+Given random variable $X$ with $E(X) = 5$ and $\text{Var}(X) = 2$. Find $E(X + 2X)$.
+ 
+\begin{choices}
+\item 10
+\item 15
+\item 25
+\item Not enough information.
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  จากสิ่งที่โจทย์ต้องการหาเมื่อใช้คุณสมบัติ Linearlity ที่กล่าวว่า...
+  \begin{align*}
+    E[aX+b] &= aE[X]+b &\; \text{ ; (เมื่อ $a, b$ เป็นค่าคงที่)} \\
+    E[X+Y]  &= E[X] + E[Y] &\; \text{ ; (เมื่อ $X$, $Y$ เป็นตัวแปรสุ่ม)}
+  \end{align*}
+  จึงสามารถใช้สมบัติแยกออกมาได้ว่า $E[X] + 2E[X]$ ทำให้สามารถคำนวณหาตอบได้ว่า
+  \begin{align*}
+    E[X + 2X] &= E[X] + 2E[X] \\
+              &= 5 + 2(5) \\
+              &= 15 \\
+  \end{align*}
+  ตอบ $\boxed{2)}$
+\end{solutionbox}
+
+\begin{problembox}{Problem 47}
+What is the expected value of $X$ if $X$ follows $\text{Binomial}(10, 0.8)$?
+ 
+\begin{choices}
+\item 8
+\item 16
+\item 80
+\item 0.8
+\end{choices}
+\end{problembox}
+ 
+\begin{solutionbox}
+  จากโจทย์กำหนดให้ทำให้ทราบว่า $n=10, p=0.8$ สามารถคำนวณ Expected value สำหรับ Binomial distribution ได้ดังนี้
+  \begin{align*}
+    E[X] &= np \\
+          &= 10(0.8) \\
+          &= 8 \\
   \end{align*}
   ตอบ $\boxed{1)}$
 \end{solutionbox}
 
+\newpage
+
+\begin{problembox}{Problem 48}
+If $X \sim \text{Binomial}(5, 0.5)$, calculate $P(X = 3)$.
+ 
+\begin{choices}
+\item 1.25
+\item 0.625
+\item 0.3125
+\item Not enough information.
+\end{choices}
+\end{problembox}
+ 
+\begin{solutionbox}
+  จากโจทย์กำหนดให้ทำให้ทราบว่า $n=5, p=0.5$ สามารถคำนวณความน่าจะเป็นเมื่อ $X=3$ ได้ดังนี้
+  \begin{align*}
+    \text{จาก } P(X=k) &= \binom{n}{k}p^k (1-p)^{n-k} \\
+                P(X=3) &= \binom{5}{3}(0.5)^3(1-0.5)^2 \\
+                       &= 10 \times 0.125 \times 0.25 \\
+                       &= 0.3125 \\
+  \end{align*}
+  ตอบ $\boxed{3)}$
+\end{solutionbox}
+
+\begin{problembox}{Problem 49}
+Given $X \sim \text{Bernoulli}(0.3)$. Calculate $\text{Var}(X + X)$.
+ 
+\begin{choices}
+\item 0.21
+\item 0.42
+\item 0.63
+\item 0.84
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  จากสิ่งที่โจทย์ต้องการหาเมื่อใช้คุณสมบัติ Scaling and Shifting ที่กล่าวว่า...
+  \begin{align*}
+    Var(aX+b) &= a^2Var(X) \; \text{; (เมื่อ $a,b$ เป็นค่าคงที่ และ $X$ เป็นตัวแปรสุ่ม)}
+  \end{align*}
+  ทำให้เมื่อใช้สมบัติทำให้สรุปได้ว่าเราต้องหาค่าของ $Var(X + X)$ ได้โดยที่แปลงตามสมบัติดังนี้
+  \begin{align*}
+    Var(X + X) &= Var(2X) \\
+               &= 2^2Var(X)
+  \end{align*}
+  \textbf{(มีต่อหน้าถัดไป...)}
+  \newpage
+  ทำการหาค่า $Var(X)$ โดยการคำนวณจากสิ่งที่โจทย์กำหนดให้ โดยเราทราบว่าเป็น Bernoulli distribution และ $p=0.3$ โดยคำนวณได้จาก
+  \begin{align*}
+    Var(X) &= 0.3(1-0.3) \\
+           &= 0.3(0.7) \\
+           &= 0.21 \\
+    Var(2X) &= 2^2Var(X) \\
+            &= 4(0.21) \\
+            &= 0.84 \\
+  \end{align*}
+
+  ตอบ $\boxed{4)}$
+\end{solutionbox}
 
 \end{document}

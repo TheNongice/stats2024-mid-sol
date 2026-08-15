@@ -228,8 +228,10 @@ print(speed)
 \end{problembox}
 
 \begin{solutionbox}
-  เมื่อเราอ่าน Code ที่ปรากฏข้างต้นเราจะทราบว่าใน If-block แรกจะมีเพียงแค่เหตุการณ์ที่สุ่มออกมาแล้วทำให้ \texttt{speed = 100} นั้นมีเพียง 2 เหตุการณ์จากทั้งหมด 3 นั่นคือ 1, 2
-  จึงทำให้ทราบได้ว่าความน่าจะเป็นที่จะเกิดเหตุการณ์ดังกล่าวคือ $\frac{2}{3} \approx 0.66\overline{6} \approx 67\%$
+  เมื่อเราอ่าน Code ที่ปรากฏข้างต้นเราจะทราบว่ามีเพียง If-block แรกทำงานเท่านั้น เพราะ If-block ที่ 2 เป็นการสุ่มค่าในลักษณะของ continuous ที่เป็นไปได้ตั้งแต่ $[0.0, 1.0]$ 
+  ซึ่งการที่ If-block ที่ 2 ทำงานได้นั้นค่าต้อง > 1 \underline{\textbf{ซึ่งไม่มีทางเกิดขึ้นจริง}} \textbf{จึงไม่ต้องนำมาพิจารณา}
+  ฉะนั้นจะมีเพียงแค่เหตุการณ์ที่สุ่มออกมาแล้วทำให้ \texttt{speed = 100} นั้นมีเพียง 2 เหตุการณ์จากทั้งหมด 3 นั่นคือ 1, 2
+  ทำให้ทราบว่าความน่าจะเป็นที่จะเกิดเหตุการณ์ดังกล่าวคือ $\frac{2}{3} \approx 0.66\overline{6} \approx 67\%$
 
   ตอบ $\boxed{4)}$
 \end{solutionbox}
@@ -252,13 +254,19 @@ $\square$ C++ \hfill $\square$ Java \hfill $\square$ Both \hfill $\square$ Neith
 \end{problembox}
 
 \begin{solutionbox}
+  โจทย์ข้อนี้ได้มีการระบุข้อจำกัดในแบบสำรวจแล้วว่าคน ๆ หนึ่งเลือกตอบได้เพียง 1 คำตอบเท่านั้น นั่นทำให้เราเก็บข้อมูลแยกรายตัวเลือกได้ทันทีโดยไม่ต้องทำการคำนวณที่ซับซ้อน
+
   \underline{\textbf{Solution-1}}
+ 
+  สามารถคำนวณได้โดยตรงนำยอดที่กรอกแต่ละแบบมาบวกได้โดยตรง ซึ่งคิดได้จาก $40+20+10 = 70$ คน
 
-  โจทย์ข้อนี้ได้มีการระบุข้อจำกัดในแบบสำรวจแล้วว่าคน ๆ หนึ่งเลือกตอบได้เพียง 1 คำตอบเท่านั้น 
-  นั่นทำให้เราเก็บข้อมูลแยกรายตัวเลือกได้ทันทีโดยไม่ต้องทำการคำนวณเลย ทำให้คำนวณได้โดยตรงคือนำจำนวนยอดที่กรอกแต่ละแบบมาบวกได้โดยตรง
-  คิดได้จาก $40+20+10 = 70$ คน
+  \vspace{1cm}
+  \textbf{(มีต่อหน้าถัดไป...)}
 
+  \newpage
   \underline{\textbf{Solution-2}}
+
+  หากมองให้เป็นลักษณะของ Venn Diagram จะได้ว่า...
   \begin{flushleft}
   $\begin{aligned}
     \text{กำหนดให้ } A &:= \text{คนที่เขียนภาษา C++ ได้} \\
@@ -295,10 +303,10 @@ What does this code compute?
   ทำการวิเคราะห์ว่าจาก Python Code ที่ระบุข้างต้นทำงานได้อย่างไร โดยเริ่มต้นจาก...
   \begin{itemize}
     \item For-block แรกทำงานตั้งแต่ $[1, n-1]$ ทำให้เรามีค่าตัว $s$ อยู่ที่ $1 \times 2 \times ... \times (n-1) = (n-1)!$
-    \item For-block สองทำงานตั้งแต่ $[1, k-1]$ ทำให้เรามีค่าตัว $s$ อยู่ที่ $1 \times 2 \times ... \times (k-1) = (k-1)!$
+    \item For-block ที่สองทำงานตั้งแต่ $[1, k-1]$ ทำให้เรามีค่าตัว $s$ อยู่ที่ $1 \times 2 \times ... \times (k-1) = (k-1)!$
     \item เมื่อเขียนเป็นรูปสมการคณิตจะได้ว่า $\frac{1 \times 2 \times ... \times (n-1)}{1 \times 2 \times ... \times (k-1)} = \frac{(n-1)!}{(k-1)!}$
   \end{itemize}
-  เพื่อความง่ายตรวจสอบ ให้ลองทำการแทนค่าสำหรับตัวแปร $n, k$ มีค่าห่างที่ห่างกัน ณ ที่นี้ขอสมมติค่าเป็น $n=8, k=5$ จากรูปสมการเศษส่วนด้านบนจึงได้ว่า $\frac{7!}{4!}$ ถัดไปทำการหาว่าตัวเลือกในข้อสอบใดมีค่าตรงกับเศษส่วนข้างต้น ซึ่งแทนที่ตัวเลขได้ดังนี้...
+  เพื่อความรวดเร็วระหว่างการสอบ ให้แทนค่าสำหรับตัวแปร $n, k$ มีค่าห่างที่ห่างกัน ณ ที่นี้ขอสมมติค่าเป็น $n=8, k=5$ จากรูปสมการเศษส่วนด้านบนจึงได้ว่า $\frac{7!}{4!}$ ถัดไปทำการหาว่าตัวเลือกในข้อสอบใดมีค่าตรงกับเศษส่วนข้างต้น ซึ่งแทนที่ตัวเลขได้ดังนี้...
   \begin{itemize}
     \item ${}_nP_k = {}_8P_5 = \frac{8!}{3!}$
     \item ${}_{n-1}P_{k-1} = {}_7P_4 = \frac{7!}{3!}$
@@ -403,7 +411,7 @@ How many integers from 1 to 1,000 are divisible by 4 but not divisible by 5?
   \end{aligned}$
   \end{flushleft}
 
-  จากที่โจทย์ระบุ ทำให้ได้ข้อมูลแต่ละส่วนดังนี้ $n(A) = \frac{1000}{4} = 250, n(B) = \frac{1000}{5} = 200, n(A \cap B) = \frac{1000}{gcd(4, 5)} = 50$ โจทย์ต้องการหา $n(A \cap B')$ สามารถหาได้โดย...
+  จากที่โจทย์ระบุ ทำให้ได้ข้อมูลแต่ละส่วนดังนี้ $n(A) = \lfloor \frac{1000}{4} \rfloor = 250, n(B) = \lfloor \frac{1000}{5} \rfloor = 200, n(A \cap B) = \lfloor \frac{1000}{lcm(4, 5)} \rfloor = 50$ โจทย์ต้องการหา $n(A \cap B')$ สามารถหาได้โดย...
   \begin{align*}
     n(A \cap B') &= n(A) - n(A \cap B) \\
                   &= 250 - 50 \\
@@ -471,11 +479,23 @@ There are 5 men and 3 women in the CEDT student council. They want to select a p
     \item First vice president ต้องเป็นผู้หญิง และ Second vice president ต้องเป็นผู้ชาย 
   \end{itemize}
   
-  ทำการหยิบเลือกบุคคลที่มีข้อจำกัดมากที่สุดก่อนนั่นคือ First/Second vice president และอีก 2 ตำแหน่งที่เหลือไม่ระบุเงื่อนไขแต่สามารถมีได้เพียงแค่คนเดียว ทำให้คำนวณได้ว่า $3 \times 5 \times 6 \times 5 = 450$ วิธี
+  ทำการหยิบเลือกบุคคลที่มีข้อจำกัดมากที่สุดก่อนนั่นคือ First/Second vice president และอีก 2 ตำแหน่งที่เหลือไม่ระบุเงื่อนไขแต่สามารถมีได้เพียงแค่คนเดียว ทำให้คำนวณได้ดังนี้...
+  \begin{align*}
+    \underbrace{3}_{\text{เลือก $1^{st}$VP}} \times 
+    \underbrace{5}_{\text{เลือก $2^{nd}$VP}} \times 
+    \underbrace{6}_{\text{เลือกคนเป็นประธาน}} \times 
+    \underbrace{5}_{\text{เลือกคนเป็นเลขา}} = 450 \text{ วิธี}
+  \end{align*}
+
+  สังเกตได้ว่าในช่วงแรก ๆ จะเลือก 2 ตำแหน่งที่มีข้อจำกัดมาก่อนจึงจัดวิธีได้ $3 \times 5$ ทำให้เราทราบว่ายังมีคนที่ยังรอเลือกอีก $8-1-1=6$ คน
+  และอีก 2 ตำแหน่งถัดจากนี้ไม่มีข้อจำกัดใด ๆ ทำให้เราสามารถคำนวณต่อได้ด้วย $6 \times 5$ ซึ่งมาจาก 6 คนสุดท้ายในตำแหน่งที่ (3) 
+  และตำแหน่งที่ (4) ที่เหลือเพียง $5$ คนเพราะว่าตำแหน่งที่ (3) ได้รับการเลือกเสร็จสิ้น
 
   ตอบ $\boxed{4)}$
 \end{solutionbox}
- 
+
+\newpage
+
 \begin{problembox}{Problem 11}
 There are 5 men and 5 women in a class. They want to select 4 students to attend a conference, which must consist of at least one man and at least one woman. How many ways can they select students to attend the conference?
  
@@ -589,9 +609,6 @@ The CU equestrian club has 12 members. 3 of them are first-year students, 4 are 
   \end{choices}
 \end{problembox}
 
-(Solution อยู่หน้าถัดไป)
-\newpage
-
 \begin{solutionbox}
   \begin{flushleft}
     $\begin{aligned}
@@ -613,6 +630,8 @@ The CU equestrian club has 12 members. 3 of them are first-year students, 4 are 
 
   ตอบ $\boxed{3)}$
 \end{solutionbox}
+
+\newpage
 
 \begin{problembox}{Problem 19}
   Among all companies in the stock market, 20\% are large companies, 30\% are medium companies, and 50\% are small companies. Last year, the stock price of 80\% of large companies, 70\% of medium companies, and 30\% of small companies went up. In total, the stock price of what percentage of companies in the stock market went up last year?
@@ -649,6 +668,7 @@ The CU equestrian club has 12 members. 3 of them are first-year students, 4 are 
   ตอบ $\boxed{1)}$
 \end{solutionbox}
 
+\newpage
 
 \groupctx{29--30}{Students in a particular university are either in the CEDT or CP program. 60\% of CEDT students and 30\% of CP students can write JavaScript. Overall, 48\% of students in this university can write JavaScript.}
  

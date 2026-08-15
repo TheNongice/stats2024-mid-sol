@@ -450,6 +450,205 @@ How many integers from 1 to 1,000 are divisible by 4 but not divisible by 5?
   ตอบ $\boxed{2)}$
 \end{solutionbox}
 
+\newpage
+
+\begin{problembox}{Problem 10}
+There are 5 men and 3 women in the CEDT student council. They want to select a president, first vice president, second vice president, and secretary. The first vice president must be a woman and the second vice president must be a man, while the president and secretary can be any gender. How many ways can they select the positions if each person can hold at most one position?
+ 
+\begin{choices}
+\item 360
+\item 390
+\item 420
+\item 450
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  จากโจทย์ระบุว่า
+  \begin{itemize}
+    \item มีผู้ชาย 5 คน และผู้หญิง 3 คน
+    \item ต้องการเลือกตำแหน่งโดยที่แต่ละคนมีได้มากสุด 1 ตำแหน่ง
+    \item First vice president ต้องเป็นผู้หญิง และ Second vice president ต้องเป็นผู้ชาย 
+  \end{itemize}
+  
+  ทำการหยิบเลือกบุคคลที่มีข้อจำกัดมากที่สุดก่อนนั่นคือ First/Second vice president และอีก 2 ตำแหน่งที่เหลือไม่ระบุเงื่อนไขแต่สามารถมีได้เพียงแค่คนเดียว ทำให้คำนวณได้ว่า $3 \times 5 \times 6 \times 5 = 450$ วิธี
+
+  ตอบ $\boxed{4)}$
+\end{solutionbox}
+ 
+\begin{problembox}{Problem 11}
+There are 5 men and 5 women in a class. They want to select 4 students to attend a conference, which must consist of at least one man and at least one woman. How many ways can they select students to attend the conference?
+ 
+\begin{choices}
+\item 140
+\item 200
+\item 210
+\item 700
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  จากโจทย์ระบุว่า
+  \begin{itemize}
+    \item มีผู้ชาย 5 คน และผู้หญิง 5 คน
+    \item มีคนต้องถูกเลือกไปประชุมทั้งสิ้น 4 คน
+    \item ต้องการเลือกผู้ชายและผู้หญิงพร้อมกันอย่างน้อย 1 คนไปประชุม จัดได้กี่วิธี
+  \end{itemize}
+  ใช้หลักการลบแบบ Complement ซึ่งมีหลักดังต่อไปนี้
+  \begin{align*}
+    n(\text{กรณีที่สนใจ}) &= n(\text{วิธีจัดกรณีไม่มีข้อจำกัด}) - \sum_{k=1}^{n(\text{กรณีที่ผิด})} n(\text{กรณีที่ผิด}_k)
+  \end{align*}
+
+  ในที่นี้มีกรณีที่ผิดกฏอยู่ 2 แบบคือเลือกเพียงผู้ชายเท่านั้นกับเลือกเพียงผู้หญิงเท่านั้นซึ่งสามารถคำนวณได้ดังนี้
+
+  \begin{align*}
+    \text{กรณีเลือกโดยไม่มีข้อจำกัด} &= \binom{10}{4} = 210 \text{ วิธี} \\
+    \text{กรณีเลือกแต่ผู้ชาย} &= \binom{5}{4} = 5 \text{ วิธี} \\
+    \text{กรณีเลือกแต่ผู้หญิง} &= \binom{5}{4} = 5 \text{ วิธี} \\
+  \end{align*}
+
+  $\therefore n(\text{กรณีที่สนใจ}) = 210 - 5 - 5 = 200 \text{ วิธี}$
+
+  ตอบ $\boxed{2)}$
+\end{solutionbox}
+
+\begin{problembox}{Problem 13}
+The CU equestrian club has 12 members. 3 of them are first-year students, 4 are second-year students, and 5 are third-year students. If we randomly select 3 club members, what is the probability that they are all in the same year?
+ 
+\begin{choices}
+\item $1/10$
+\item $1/20$
+\item $3/11$
+\item $3/44$
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  จากโจทย์ระบุว่า
+  \begin{itemize}
+    \item ชมรมมีสมาชิกทั้งสิ้น 12 คน
+    \item เป็นนักเรียนปี 1 จำนวน 3 คน
+    \item เป็นนักเรียนปี 2 จำนวน 4 คน
+    \item เป็นนักเรียนปี 3 จำนวน 5 คน
+    \item หาความน่าจะเป็นของต้องการเลือก 3 คนและมีแต่ปีเดียวกัน
+  \end{itemize}
+  
+  ทำให้เราสามารถหาค่า $n(S) = \binom{12}{3} = 220$ และเราสามารถหาค่าของ $n(E)$ ได้โดยการรวมทุกกรณีย่อย ซึ่งสามารถคิดแต่ละกรณีย่อยได้ดังนี้...
+  \begin{align*}
+    \text{เลือกเพียงปี 1} &= \binom{3}{3} = 1 \text{ วิธี} \\
+    \text{เลือกเพียงปี 2} &= \binom{4}{3} = 4 \text{ วิธี} \\
+    \text{เลือกเพียงปี 3} &= \binom{5}{3} = 10 \text{ วิธี} \\
+  \end{align*} 
+  จึงรวมค่า $n(E) = 1+4+10 = 15$
+  $\therefore$ ความน่าจะเป็นจึงมีค่า = $\frac{15}{220} = \frac{3}{44}$
+
+  ตอบ $\boxed{4)}$
+\end{solutionbox}
+
+\begin{problembox}{Problem 14}
+4 players are playing Among Us. Each player can vote for one other player (but cannot vote for him/herself). If every player votes randomly, what is the probability that there is a player who receives exactly 3 votes.
+ 
+\begin{choices}
+\item $1/81$
+\item $1/27$
+\item $4/27$
+\item $4/81$
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  จากโจทย์ระบุว่า
+  \begin{itemize}
+    \item มีผู้เล่นในเกม Among Us ทั้งสิ้น 4 คน
+    \item แต่ละคนโหวตได้เพียงแค่ 1 คนเท่านั้น (โหวตตัวเองไม่ได้)
+    \item หาความน่าจะเป็นที่ผู้เล่นคนหนึ่งถูกโหวต 3 ครั้งพอดี
+  \end{itemize}
+
+  จากข้อมูลที่ได้รับทำให้ทราบว่า $n(S) = 3^4 = 81$ การหาค่า $n(E)$ สามารถหาได้จากการนับจำนวน\textbf{วิธีการถูกโหวต}ของผู้เล่นหมายเลขนั้น ๆ ซึ่งคำนวณได้จาก
+  \begin{align*}
+    n(\text{โหวตแต่ผู้เล่น No.1}) &= 3 \text{ (ผู้เล่นคนที่ 1 เลือกได้)} \times 1 \text{ (ผู้เล่นที่เหลือเลือกได้)} = 3 \\
+    &\vdots \\
+    n(\text{โหวตแต่ผู้เล่น No.4}) &= 3 \text{ (ผู้เล่นคนที่ 4 เลือกได้)} \times 1 \text{ (ผู้เล่นที่เหลือเลือกได้)} = 3
+  \end{align*}
+
+  นำกรณีที่โหวตแต่ละผู้เล่นมารวมกันจะได้ $3 \times 4 \text{ (จำนวนผู้เล่นทั้งหมด)} = 12$ 
+  
+  $\therefore$ ความน่าจะเป็นจึงมีค่า $\frac{12}{81} = \frac{4}{27}$
+
+  ตอบ $\boxed{3)}$
+\end{solutionbox}
+
+\groupctx{29--30}{Students in a particular university are either in the CEDT or CP program. 60\% of CEDT students and 30\% of CP students can write JavaScript. Overall, 48\% of students in this university can write JavaScript.}
+ 
+\begin{problembox}{Problem 29}
+If a student can write JavaScript, what is the probability that this student is in CEDT program?
+ 
+\begin{choices}
+\item $3/4$
+\item $4/5$
+\item $5/6$
+\item $6/7$
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  \begin{flushleft}
+  $\begin{aligned}
+    \text{กำหนดให้ } A &:= \text{นิสิต CEDT} \\
+    B &:= \text{นิสิต CP} \\
+    J &:= \text{เขียน JavaScript ได้} \\
+  \end{aligned}$
+  \end{flushleft}
+
+  จากโจทย์ระบุว่า $P(J) = 0.48, P(J|A) = 0.6, P(J|B) = 0.3$ สำหรับข้อนี้โจทย์ต้องการหา $P(A|J)$
+
+  ใช้ทฤษฎีบทของ Bayes Theorem ในการหาค่าความน่าจะเป็นย้อนกลับจาก ซึ่งได้ว่า $P(A|J) = \frac{P(J|A)P(A)}{P(J)}$ แต่ตอนนี้เรายังไม่ทราบค่าของ $P(A)$ จึงยังทำให้หาค่าไม่ได้
+  สำหรับโจทย์ข้อนี้วิธีหา $P(A)$ ที่ง่ายที่สุดคือหาจาก $P(J)$ โดยใช้หลักการของ Law of Total Probability ทำให้สามารถคำนวณออกมาได้ดังนี้
+  \begin{align*}
+    P(J) &= P(J|A)P(A) + P(J|B)P(B) \\
+    0.48  &= 0.6x + 0.3(1-x) \\
+    0.48  &= 0.6x + 0.3 - 0.3x \\
+    0.3x  &= 0.18 \\
+    x  &= \frac{0.18}{0.3} = 0.6 \\
+  \end{align*}
+
+  โดยจากการแก้สมการข้างต้นนั้นได้แทนที่ $x = P(A)$ และ $P(B) = 1-x$ เพราะ $P(B)$ สามารถหาได้โดยการนำจำนวนยอดร้อยละทั้งหมดมาหักหับยอดความน่าจะเป็นของการเกิด $P(A)$ เมื่อรู้เช่นนั้นแล้วจึงแก้สมการออกมาและได้ผลลัพธ์ $P(A) = 0.6$ 
+
+  เมื่อได้ค่า $P(A)$ แล้วจึงนำกลับมาแทนค่าในสมการของ Bayes Theorem ต่อดังนี้
+  \begin{align*}
+    P(A|J) &= \frac{P(J|A)P(A)}{P(J)} \\
+          &= \frac{0.6 \times 0.6}{0.48} \\
+          &= 0.75 \; \left(\text{หรือ } \frac{3}{4}\right)
+  \end{align*}
+
+  ตอบ $\boxed{1)}$
+\end{solutionbox}
+ 
+\begin{problembox}{Problem 30}
+If a student cannot write JavaScript, what is the probability that this student is in CEDT program?
+ 
+\begin{choices}
+\item $3/13$
+\item $4/13$
+\item $5/13$
+\item $6/13$
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  โจทย์ข้อนี้ต้องการทราบ $P(A|J')$ ซึ่งสามารถคิดได้จาก Bayes Theorem ดังนี้
+  \begin{align*}
+    P(A|J') &= \frac{P(J'|A)P(A)}{P(J')} \\
+          &= \frac{0.4 \times 0.6}{0.52} \\
+          &\approx 0.46153 \; \left(\text{หรือ } \frac{6}{13}\right)
+  \end{align*}
+  
+  ตอบ $\boxed{4)}$
+
+  \underline{\textbf{Notes:}}
+  เราสามารถหาค่าของ $P(J'|A)$ ได้หากทราบค่า $P(J|A)$ โดยการนำ $1 - P(J|A) = 1-0.6 = 0.4$
+\end{solutionbox}
+
 \begin{problembox}{Problem 1}
 Problem statement here.
 

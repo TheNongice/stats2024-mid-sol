@@ -260,7 +260,7 @@ $\square$ C++ \hfill $\square$ Java \hfill $\square$ Both \hfill $\square$ Neith
  
   สามารถคำนวณได้โดยตรงนำยอดที่กรอกแต่ละแบบมาบวกได้โดยตรง ซึ่งคิดได้จาก $40+20+10 = 70$ คน
 
-  \vspace{1cm}
+  \vspace{0.5cm}
   \textbf{(มีต่อหน้าถัดไป...)}
 
   \newpage
@@ -306,18 +306,30 @@ What does this code compute?
     \item For-block ที่สองทำงานตั้งแต่ $[1, k-1]$ ทำให้เรามีค่าตัว $s$ อยู่ที่ $1 \times 2 \times ... \times (k-1) = (k-1)!$
     \item เมื่อเขียนเป็นรูปสมการคณิตจะได้ว่า $\frac{1 \times 2 \times ... \times (n-1)}{1 \times 2 \times ... \times (k-1)} = \frac{(n-1)!}{(k-1)!}$
   \end{itemize}
-  เพื่อความรวดเร็วระหว่างการสอบ ให้แทนค่าสำหรับตัวแปร $n, k$ มีค่าห่างที่ห่างกัน ณ ที่นี้ขอสมมติค่าเป็น $n=8, k=5$ จากรูปสมการเศษส่วนด้านบนจึงได้ว่า $\frac{7!}{4!}$ ถัดไปทำการหาว่าตัวเลือกในข้อสอบใดมีค่าตรงกับเศษส่วนข้างต้น ซึ่งแทนที่ตัวเลขได้ดังนี้...
-  \begin{itemize}
+  
+  Permutation ของ ${}_nP_k$ สามารถถูกคำนวณได้โดย $\frac{n!}{(n-k)!}$ ให้ทำการจัดรูปของสมการที่อยู่ในแต่ละ Choice เพื่อเทียบว่าตัวเลือกใดตรงกับ $\frac{(n-1)!}{(k-1)!}$ โดยทำได้ดังนี้
+
+  \begin{substmt}
+    \item ${}_nP_k = \frac{n!}{(n-k)!}$
+    \item ${}_{n-1}P_{k-1} = \frac{(n-1)!}{((n-1)-(k-1))!} = \frac{(n-1)!}{(n-k)!}$
+    \item ${}_nP_{n-k} = \frac{n!}{(n-(n-k))!} = \frac{n!}{k!}$
+    \item ${}_{n-1}P_{n-k} = \frac{(n-1)!}{((n-1)-(n-k))!} = \frac{(n-1)!}{(-1+k)!} = \frac{(n-1)!}{(k-1)!} \qed$
+  \end{substmt}
+
+  \vspace{0.5cm}
+  \textbf{(มีบอกคำแนะนำเพิ่มเติมหน้าถัดไป...)}
+  \newpage
+
+  เนื่องจากการจัดรูปเป็นวิธีที่ให้ผลถูกต้องที่สุดแต่อาจก่อให้เกิดความสับสนหรือทำช้ามาก ๆ เพื่อความรวดเร็วระหว่างการสอบ แนะนำแทนค่าสำหรับตัวแปร $n, k$ มีค่าห่างที่ห่างกัน ณ ที่นี้ขอสมมติค่าเป็น $n=8, k=5$ จากรูปสมการเศษส่วนด้านบนจึงได้ว่า $\frac{7!}{4!}$ ถัดไปทำการหาว่าตัวเลือกในข้อสอบใดมีค่าตรงกับเศษส่วนข้างต้น ซึ่งแทนที่ตัวเลขได้ดังนี้...
+  \begin{substmt}
     \item ${}_nP_k = {}_8P_5 = \frac{8!}{3!}$
     \item ${}_{n-1}P_{k-1} = {}_7P_4 = \frac{7!}{3!}$
     \item ${}_nP_{n-k} = {}_8P_3 = \frac{8!}{5!}$
     \item ${}_{n-1}P_{n-k} = {}_7P_3 = \frac{7!}{4!}$
-  \end{itemize}
+  \end{substmt}
 
   ตอบ $\boxed{4)}$
 \end{solutionbox}
-
-\newpage
 
 \begin{problembox}{Problem 8}
 In September, 18 days are sunny, 14 days are rainy, and 5 days are neither sunny nor rainy. How many days in September are both sunny and rainy?
@@ -598,6 +610,46 @@ The CU equestrian club has 12 members. 3 of them are first-year students, 4 are 
   ตอบ $\boxed{3)}$
 \end{solutionbox}
 
+\begin{problembox}{Problem 15}
+There are 3 dice. Each one have an equal probability to land on each of its face.
+\begin{itemize}
+  \item The first die (singular form of dice) has 6 faces, with numbers 1, 2, 3, 4, 5, 6.
+  \item The second die has 5 faces, with numbers 1, 2, 3, 4, 5.
+  \item The third die has 4 faces, with numbers 1, 2, 3, 4.
+\end{itemize}
+Mint rolls these dice. What is the probability that the three shown numbers are all different?
+ 
+\begin{choices}
+\item $1/3$
+\item $2/3$
+\item $7/15$
+\item $8/15$
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  จากสิ่งที่โจทย์ระบุเราทราบว่าการออกแต่ละหน้าในแต่ละลูกเต๋ามีโอกาสที่เท่ากันเสมอ (กล่าวง่าย ๆ คือ ลูกเต๋าแต่ละลูกมีโอกาสออกแต่ละหน้าที่ $\frac{1}{6}, \frac{1}{5}, \frac{1}{4}$ ตามลำดับเสมอ) 
+  จึงสามารถหา ${n(S)}$ ได้ว่า $4 \times 5 \times 6 = 120$ วิธีเพราะว่าแต่ละตัวที่คูณนั้นมาจากผลลัพธ์ที่ลูกเต๋าแต่ละลูกสามารถออกมาได้
+
+  ส่วนถัดไปคือการหาค่า ${n(E)}$ สามารถหาได้โดยให้เริ่มหยิบดูผลลัพธ์ที่สามารถออกได้ของลูกเต๋าที่มีข้อจำกัดมากที่สุดก่อน ในที่นี้คือลูกเต๋าหมายเลข (3), (2), (1) ตามลำดับ ซึ่งสามารถคำนวณวิธีได้ดังนี้
+  \begin{align*}
+    \underbrace{4}_{\text{ลูกเต๋า (3) ออกผลได้}} \times 
+    \underbrace{4}_{\text{ลูกเต๋า (2) ออกผลได้}} \times 
+    \underbrace{4}_{\text{ลูกเต๋า (1) ออกผลได้}} = 4^3 = 64 \text{ วิธี}
+  \end{align*}
+  เหตุผลที่ลูกเต๋าแต่ละลูกออกได้เพียง 4 หมายเลขในทุกลูกเต๋านั้นเป็นเพราะว่า
+  \begin{substmt}
+    \item ลูกเต๋าหมายเลข (3): เลือกหมายเลขได้ $1 \sim 4$
+    \item ลูกเต๋าหมายเลข (2): เลือกหมายเลขได้ $1 \sim 5$ แต่ต้องเอาออก 1 ตัวที่เคยถูกเลือกแล้ว ทำให้เลือกได้จริง $5-1=4$
+    \item ลูกเต๋าหมายเลข (1): เลือกหมายเลขได้ $1 \sim 6$ แต่ต้องเอาออก 2 ตัวที่เคยถูกเลือกแล้ว ทำให้เลือกได้จริง $6-2=4$
+  \end{substmt}
+
+  เมื่อเราทราบค่า $n(E), n(S)$ แล้วจึงสามารถหาค่าความน่าจะเป็นได้ $\frac{64}{120} = \frac{8}{15}$
+
+  ตอบ $\boxed{4)}$
+\end{solutionbox}
+
+
 \begin{problembox}{Problem 17}
   63\% of CEDT students pass both the midterm and final exams of statistics class. Among those who pass the midterm exam, 90\% of them also pass the final exam. What percentage of CEDT students pass the midterm exam?
   
@@ -631,8 +683,6 @@ The CU equestrian club has 12 members. 3 of them are first-year students, 4 are 
   ตอบ $\boxed{3)}$
 \end{solutionbox}
 
-\newpage
-
 \begin{problembox}{Problem 19}
   Among all companies in the stock market, 20\% are large companies, 30\% are medium companies, and 50\% are small companies. Last year, the stock price of 80\% of large companies, 70\% of medium companies, and 30\% of small companies went up. In total, the stock price of what percentage of companies in the stock market went up last year?
   
@@ -643,6 +693,9 @@ The CU equestrian club has 12 members. 3 of them are first-year students, 4 are 
   \item 64\%
   \end{choices}
 \end{problembox}
+
+\textbf{(มีต่อหน้าถัดไป...)}
+\newpage
 
 \begin{solutionbox}
 
@@ -667,8 +720,6 @@ The CU equestrian club has 12 members. 3 of them are first-year students, 4 are 
 
   ตอบ $\boxed{1)}$
 \end{solutionbox}
-
-\newpage
 
 \groupctx{29--30}{Students in a particular university are either in the CEDT or CP program. 60\% of CEDT students and 30\% of CP students can write JavaScript. Overall, 48\% of students in this university can write JavaScript.}
  
@@ -986,10 +1037,6 @@ What is $E(X)$?
   ตอบ $\boxed{3)}$
 \end{solutionbox}
 
-(โจทย์ และ Solution ข้อที่ 42 อยู่หน้าถัดไป)
-
-\newpage
-
 \begin{problembox}{Problem 42}
 What is $E(X^2)$?
  
@@ -1147,6 +1194,30 @@ Given $X \sim \text{Bernoulli}(0.3)$. Calculate $\text{Var}(X + X)$.
   \end{align*}
 
   ตอบ $\boxed{4)}$
+\end{solutionbox}
+
+\begin{problembox}{Problem 55}
+Which statement best fits the memoryless property?
+ 
+\begin{choices}
+\item Students who have failed a course are as likely to fail the course the second time.
+\item Somchai rolled no SSRs for the past 100 rolls. If the SSR chance is 1\%, he should get one SSR in the next 10 rolls.
+\item A fair die has the same probability for all sides.
+\item For the Thai government lottery, the previous last-two-digit winning number cannot be the same as the next last-two-digit winning number.
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  Memoryless Property คือคุณสมบัติของค่าตัวแปรสุ่มหนึ่งที่สามารถ model ได้ด้วย Geometric distribution โดยที่มีค่าความน่าจะเป็นของอนาคตที่ไม่มีความเกี่ยวโยงกับความน่าจะเป็นในอดีต
+  \begin{substmt}
+    \item \textbf{ถูกต้อง:} สามารถ model ได้ด้วย Geometric distribution และ ผลลัพธ์ที่ได้จากในอดีตไม่ได้ส่งผลต่ออนาคต
+    \item \textbf{ผิด:} ความน่าจะเป็นที่จะเกิดในอนาคตขึ้นอยู่กับผลลัพธ์จากอดีต
+    \item \textbf{ผิด:} เพราะโอกาสการออกหน้าลูกเต๋ายุติธรรมนั้นมีค่าเสมอต้น-ปลาย เหมาะกับการใช้ Uniform distribution 
+    ซึ่งขัดต่อคุณสมบัติของ Memoryless ที่ต้องเป็น Geometric distribution
+    \item \textbf{ผิด:} ความน่าจะเป็นที่จะเกิดในอนาคตขึ้นอยู่กับผลลัพธ์จากอดีต
+  \end{substmt}
+  
+  ตอบ $\boxed{1)}$
 \end{solutionbox}
 
 \end{document}

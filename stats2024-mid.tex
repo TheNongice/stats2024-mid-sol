@@ -493,10 +493,11 @@ There are 5 men and 3 women in the CEDT student council. They want to select a p
   
   ทำการหยิบเลือกบุคคลที่มีข้อจำกัดมากที่สุดก่อนนั่นคือ First/Second vice president และอีก 2 ตำแหน่งที่เหลือไม่ระบุเงื่อนไขแต่สามารถมีได้เพียงแค่คนเดียว ทำให้คำนวณได้ดังนี้...
   \begin{align*}
-    \underbrace{3}_{\text{เลือก $1^{st}$VP}} \times 
-    \underbrace{5}_{\text{เลือก $2^{nd}$VP}} \times 
-    \underbrace{6}_{\text{เลือกคนเป็นประธาน}} \times 
-    \underbrace{5}_{\text{เลือกคนเป็นเลขา}} = 450 \text{ วิธี}
+    \underset{\text{(เลือก $1^{st}$VP)}}{3} \times 
+    \underset{\text{(เลือก $2^{nd}$VP})}{5} \times 
+    \underset{\text{(เลือกคนเป็นประธาน)}}{6} \times 
+    \underset{\text{(เลือกคนเป็นเลขา)}}{5}
+    = 450 \text{ วิธี}
   \end{align*}
 
   สังเกตได้ว่าในช่วงแรก ๆ จะเลือก 2 ตำแหน่งที่มีข้อจำกัดมาก่อนจึงจัดวิธีได้ $3 \times 5$ ทำให้เราทราบว่ายังมีคนที่ยังรอเลือกอีก $8-1-1=6$ คน
@@ -544,6 +545,8 @@ There are 5 men and 5 women in a class. They want to select 4 students to attend
   ตอบ $\boxed{2)}$
 \end{solutionbox}
 
+\newpage
+
 \begin{problembox}{Problem 13}
 The CU equestrian club has 12 members. 3 of them are first-year students, 4 are second-year students, and 5 are third-year students. If we randomly select 3 club members, what is the probability that they are all in the same year?
  
@@ -569,13 +572,15 @@ The CU equestrian club has 12 members. 3 of them are first-year students, 4 are 
   \begin{align*}
     \text{เลือกเพียงปี 1} &= \binom{3}{3} = 1 \text{ วิธี} \\
     \text{เลือกเพียงปี 2} &= \binom{4}{3} = 4 \text{ วิธี} \\
-    \text{เลือกเพียงปี 3} &= \binom{5}{3} = 10 \text{ วิธี} \\
+    \text{เลือกเพียงปี 3} &= \binom{5}{3} = 10 \text{ วิธี}
   \end{align*} 
   จึงรวมค่า $n(E) = 1+4+10 = 15$
   $\therefore$ ความน่าจะเป็นจึงมีค่า = $\frac{15}{220} = \frac{3}{44}$
 
   ตอบ $\boxed{4)}$
 \end{solutionbox}
+
+\newpage
 
 \begin{problembox}{Problem 14}
 4 players are playing Among Us. Each player can vote for one other player (but cannot vote for him/herself). If every player votes randomly, what is the probability that there is a player who receives exactly 3 votes.
@@ -598,12 +603,20 @@ The CU equestrian club has 12 members. 3 of them are first-year students, 4 are 
 
   จากข้อมูลที่ได้รับทำให้ทราบว่า $n(S) = 3^4 = 81$ การหาค่า $n(E)$ สามารถหาได้จากการนับจำนวน\textbf{วิธีการถูกโหวต}ของผู้เล่นหมายเลขนั้น ๆ ซึ่งคำนวณได้จาก
   \begin{align*}
-    n(\text{โหวตแต่ผู้เล่น No.1}) &= 3 \text{ (ผู้เล่นคนที่ 1 เลือกได้)} \times 1 \text{ (ผู้เล่นที่เหลือเลือกได้)} = 3 \\
-    &\vdots \\
-    n(\text{โหวตแต่ผู้เล่น No.4}) &= 3 \text{ (ผู้เล่นคนที่ 4 เลือกได้)} \times 1 \text{ (ผู้เล่นที่เหลือเลือกได้)} = 3
+    n(\text{โหวตแต่ผู้เล่น No.1}) &=
+      \underset{\text{(ผู้เล่นคนที่ 1 เลือกได้)}}{3}
+      \times
+      \underset{\text{(ผู้เล่นที่เหลือเลือกได้)}}{1}
+      = 3 \\
+    &\vdots \qquad\qquad\qquad\qquad \vdots \\
+    n(\text{โหวตแต่ผู้เล่น No.4}) &=
+      \underset{\text{(ผู้เล่นคนที่ 4 เลือกได้)}}{3}
+      \times
+      \underset{\text{(ผู้เล่นที่เหลือเลือกได้)}}{1}
+      = 3
   \end{align*}
 
-  นำกรณีที่โหวตแต่ละผู้เล่นมารวมกันจะได้ $3 \times 4 \text{ (จำนวนผู้เล่นทั้งหมด)} = 12$ 
+  นำกรณีที่โหวตแต่ละผู้เล่นมารวมกันจะได้ $3 \times 4 \text{ (จำนวนผู้เล่นทั้งหมด)} = 12$ วิธี
   
   $\therefore$ ความน่าจะเป็นจึงมีค่า $\frac{12}{81} = \frac{4}{27}$
 
@@ -631,12 +644,59 @@ Mint rolls these dice. What is the probability that the three shown numbers are 
   จากสิ่งที่โจทย์ระบุเราทราบว่าการออกแต่ละหน้าในแต่ละลูกเต๋ามีโอกาสที่เท่ากันเสมอ (กล่าวง่าย ๆ คือ ลูกเต๋าแต่ละลูกมีโอกาสออกแต่ละหน้าที่ $\frac{1}{6}, \frac{1}{5}, \frac{1}{4}$ ตามลำดับเสมอ) 
   จึงสามารถหา ${n(S)}$ ได้ว่า $4 \times 5 \times 6 = 120$ วิธีเพราะว่าแต่ละตัวที่คูณนั้นมาจากผลลัพธ์ที่ลูกเต๋าแต่ละลูกสามารถออกมาได้
 
-  ส่วนถัดไปคือการหาค่า ${n(E)}$ สามารถหาได้โดยให้เริ่มหยิบดูผลลัพธ์ที่สามารถออกได้ของลูกเต๋าที่มีข้อจำกัดมากที่สุดก่อน ในที่นี้คือลูกเต๋าหมายเลข (3), (2), (1) ตามลำดับ ซึ่งสามารถคำนวณวิธีได้ดังนี้
+  ส่วนถัดไปคือการหาค่า ${n(E)}$ สามารถหาได้โดยใช้ 2 มุมมองนั่นคือหยิบลูกเต๋าหมายเลข (1) มาคิดก่อน กับหยิบลูกเต๋าลูกเต๋าหมายเลขที่ติดข้อจำกัดมากที่สุดก่อนในที่นี้คือหมายเลข (3)
+
+  \noindent\dotfill\quad$ *** $\quad\dotfill
+  
+  \underline{\smash{\textbf{มุมมองที่ 1}}}
+
+  หากเราคำนวณโดยเริ่มจากหยิบลูกเต๋าหมายเลข (1) มาก่อนนั้น จะต้องพิจารณาถึงกรณีย่อย ๆ มากพอสมควร
+  สำหรับการเฉลย Solution นี้จะใช้สัญลักษณ์ดังต่อไปนี้ (X, Y, Z) โดยที่หมายถึงหมายเลขหน้าลูกเต๋าของหมายเลข (1), (2), (3) ตามลำดับ
+  ซึ่งสามารถที่่จะแบ่งกรณีออกได้ดังนี้...
   \begin{align*}
-    \underbrace{4}_{\text{ลูกเต๋า (3) ออกผลได้}} \times 
-    \underbrace{4}_{\text{ลูกเต๋า (2) ออกผลได้}} \times 
-    \underbrace{4}_{\text{ลูกเต๋า (1) ออกผลได้}} = 4^3 = 64 \text{ วิธี}
+    \text{(6, 5, 1-4);} \quad &
+    \underset{\text{ลูกเต๋า (1) เลือกได้}}{1} \times 
+    \underset{\text{ลูกเต๋า (2) เลือกได้}}{1} \times 
+    \underset{\text{ลูกเต๋า (3) เลือกได้}}{4}
+    = 4 \text{ วิธี} \\[1ex]
+    \text{(6, 1-4, 1-4);} \quad &
+    \underset{\text{ลูกเต๋า (1) เลือกได้}}{1} \times 
+    \underset{\text{ลูกเต๋า (2) เลือกได้}}{4} \times 
+    \underset{\text{ลูกเต๋า (3) เลือกได้}}{3}
+    = 12 \text{ วิธี} \\[1ex]
+    \text{(5, 1-4, 1-4);} \quad &
+    \underset{\text{ลูกเต๋า (1) เลือกได้}}{1} \times 
+    \underset{\text{ลูกเต๋า (2) เลือกได้}}{4} \times 
+    \underset{\text{ลูกเต๋า (3) เลือกได้}}{3}
+    = 12 \text{ วิธี} \\[1ex]
+    \text{(1-4, 5, 1-4);} \quad &
+    \underset{\text{ลูกเต๋า (1) เลือกได้}}{4} \times 
+    \underset{\text{ลูกเต๋า (2) เลือกได้}}{1} \times 
+    \underset{\text{ลูกเต๋า (3) เลือกได้}}{3}
+    = 12 \text{ วิธี} \\[1ex]
+    \text{(1-4, 1-4, 1-4);} \quad &
+    \underset{\text{ลูกเต๋า (1) เลือกได้}}{4} \times 
+    \underset{\text{ลูกเต๋า (2) เลือกได้}}{3} \times 
+    \underset{\text{ลูกเต๋า (3) เลือกได้}}{2}
+    = 24 \text{ วิธี}
   \end{align*}
+  โดยสรุปคือเราจะหยิบกรณีย่อยเพื่อแบ่งกรณีให้รัดกุมและครอบคลุมที่สุดเพื่อป้องกันปัญหา Overcounting (การนับซ้ำ) 
+  โดยเราจะเลือกให้ลูกเต๋าหมายเลข (1) เลือกที่จะหยิบเลขใด ๆ ก็ได้แต่เพื่อความง่ายและลดความสับสน 
+  จึงเลือกที่จะหยิบหมายเลขที่อนาคตจะก่อให้เกิดข้อจำกัดมากที่สุดไปยังน้อยที่สุดก่อน เพื่อให้สามารถตรวจสอบได้ง่ายมากขึ้น
+  ฉะนั้นเมื่อนำแต่ละกรณีรวมกันจะได้ว่า $n(E) = 4+12+12+12+24=64$ วิธี
+
+  \noindent\dotfill\quad$ *** $\quad\dotfill
+
+  \underline{\smash{\textbf{มุมมองที่ 2}}}
+  ให้เริ่มหยิบดูผลลัพธ์ที่สามารถออกได้ของลูกเต๋าที่มีข้อจำกัดมากที่สุดก่อน ในที่นี้คือลูกเต๋าหมายเลข (3), (2), (1) ตามลำดับ ซึ่งสามารถคำนวณวิธีได้ดังนี้
+  \vspace{-5pt}
+  \begin{align*}
+    \underset{\text{ลูกเต๋า (3) ออกผลได้}}{4} \times 
+    \underset{\text{ลูกเต๋า (2) ออกผลได้}}{4} \times 
+    \underset{\text{ลูกเต๋า (1) ออกผลได้}}{4}
+    = 4^3 = 64 \text{ วิธี}
+  \end{align*}
+  \vspace{-5pt}
   เหตุผลที่ลูกเต๋าแต่ละลูกออกได้เพียง 4 หมายเลขในทุกลูกเต๋านั้นเป็นเพราะว่า
   \begin{substmt}
     \item ลูกเต๋าหมายเลข (3): เลือกหมายเลขได้ $1 \sim 4$
@@ -672,7 +732,7 @@ Mint rolls these dice. What is the probability that the three shown numbers are 
   จากโจทย์ระบุว่า $P(F \cap M) = 0.63, P(F|M) = 0.9$ โจทย์ต้องการทราบ $P(M)$ โดยสามารถหาได้โดยใช้ Bayes Theorem ได้ดังนี้
   \begin{align*}
     P(F|M) &= \frac{P(M|F)P(F)}{P(M)} \\
-    &= \frac{P(M \cap F)}{P(M)} \\
+    &= \frac{P(M \cap F)}{P(M)}
   \end{align*}
   ทำการแทนค่าตัวแปรต่าง ๆ และแก้สมการจึงจะได้ว่า
   \begin{align*}
@@ -694,17 +754,28 @@ Mint rolls these dice. What is the probability that the three shown numbers are 
   \end{choices}
 \end{problembox}
 
-\textbf{(มีต่อหน้าถัดไป...)}
 \newpage
 
 \begin{solutionbox}
 
   \underline{{\textbf{Solution-1}}}: หลักการคูณอัตราส่วน (Ratio)
 
-  NEED\_HELP: anyone pls help me. i can't describe it by myself! \texttt{:(}
-  
-  \underline{{\textbf{Solution-2}}}: หลักการ Law of Total Probability \& Bayes Theorem
+  จากโจทย์ที่กำหนด สมมติว่ามีบริษัทอยู่ทั้งสิ้น 100 แห่ง (เพราะค่าทุกอย่างอยู่ในรูปแบบร้อยละ) ซึ่งมีบริษัทขนาดใหญ่ 20 แห่ง บริษัทขนาดกลาง 30 แห่ง และบริษัทขนาดเล็ก 50 แห่ง
+  จากนั้นคำนวณจำนวนบริษัทที่ราคาหุ้นเพิ่มขึ้นในแต่ละขนาด ได้ว่าดังนี้
+  \begin{align*}
+    n(\text{บริษัทขนาดใหญ่ที่หุ้นเพิ่มขึน}) &= 20(0.8) = 16 \text{ บริษัท} \\
+    n(\text{บริษัทขนาดกลางที่หุ้นเพิ่มขึน}) &= 30(0.7) = 21 \text{ บริษัท} \\
+    n(\text{บริษัทขนาดเล็กที่หุ้นเพิ่มขึน}) &= 50(0.3) = 15 \text{ บริษัท} \\
+    \therefore n(\text{จำนวนบริษัทที่หุ้นเพิ่มขึ้น}) &= 16+21+15 = 52 \text{ บริษัท}
+  \end{align*}
+  \vspace{-0.9pt}
+  จากบริษัททั้งหมด 100 แห่งเมื่อคิดเป็นร้อยละจะทำให้เราทราบยอดร้อยละของบริษัทที่มีหุ้นเพิ่มขึ้นดังนี้
+  \begin{align*}
+    \frac{\text{จำนวนบริษัทที่หุ้นเพิ่มขึ้น}}{\text{จำนวนบริษัททั้งหมด}}
+    &= \frac{52}{100} = 52\% \qed
+  \end{align*}
 
+  \underline{{\textbf{Solution-2}}}: หลักการ Law of Total Probability \& Bayes Theorem
   \begin{flushleft}
     $\begin{aligned}
       \text{กำหนดให้ } L &:= \text{บริษัทขนาดใหญ่} &\qquad M &:= \text{บริษัทขนาดกลาง} \\
@@ -715,7 +786,7 @@ Mint rolls these dice. What is the probability that the three shown numbers are 
   \begin{align*}
     P(U)  &= P(U|L)P(L) + P(U|M)P(M) + P(U|S)P(S) \\
           &= 0.8(0.2) + 0.7(0.3) + 0.3(0.5) \\
-          &= 0.52
+          &= 0.52 \text{ (หรือ 52\%)}
   \end{align*}
 
   ตอบ $\boxed{1)}$
@@ -733,6 +804,8 @@ If a student can write JavaScript, what is the probability that this student is 
 \item $6/7$
 \end{choices}
 \end{problembox}
+
+\newpage
 
 \begin{solutionbox}
   \begin{flushleft}
@@ -752,7 +825,7 @@ If a student can write JavaScript, what is the probability that this student is 
     0.48  &= 0.6x + 0.3(1-x) \\
     0.48  &= 0.6x + 0.3 - 0.3x \\
     0.3x  &= 0.18 \\
-    x  &= \frac{0.18}{0.3} = 0.6 \\
+    x  &= \frac{0.18}{0.3} = 0.6
   \end{align*}
 
   โดยจากการแก้สมการข้างต้นนั้นได้แทนที่ $x = P(A)$ และ $P(B) = 1-x$ เพราะ $P(B)$ สามารถหาได้โดยการนำจำนวนยอดร้อยละทั้งหมดมาหักหับยอดความน่าจะเป็นของการเกิด $P(A)$ เมื่อรู้เช่นนั้นแล้วจึงแก้สมการออกมาและได้ผลลัพธ์ $P(A) = 0.6$ 
@@ -761,7 +834,7 @@ If a student can write JavaScript, what is the probability that this student is 
   \begin{align*}
     P(A|J) &= \frac{P(J|A)P(A)}{P(J)} \\
           &= \frac{0.6 \times 0.6}{0.48} \\
-          &= 0.75 \; \left(\text{หรือ } \frac{3}{4}\right)
+          &= 0.75 \; (\text{หรือ $\frac{3}{4}$})
   \end{align*}
 
   ตอบ $\boxed{1)}$
@@ -945,6 +1018,8 @@ Which random variable CANNOT be modeled with Bernoulli distribution?
   ตอบ $\boxed{2)}$
 \end{solutionbox}
 
+\newpage
+
 \begin{problembox}{Problem 38}
 Which random variable CANNOT be modeled with Binomial distribution?
  
@@ -1048,6 +1123,8 @@ What is $E(X^2)$?
 \end{choices}
 \end{problembox}
 
+\newpage
+
 \begin{solutionbox}
   สามารถคำนวณค่า Expected Value (หรือ $E[X]$) โดยใช้สมการทางคณิตศาสตร์คือ...
   \begin{align*}
@@ -1083,7 +1160,7 @@ Given a random variable $X$ and $Y = X^2$. Assume that $E(X) = 5$ and $E(Y) = 25
   จากที่โจทย์กำหนเทำให้ตอนนี้เราทราบว่า $E(X)=5, E(Y)=E(X^2)=25$ ดังนั้นเราสามารถคำนวณ $Var(X)$ ดังนี้
   \begin{align*}
     Var(X) &= 25 - (5)^2 \\
-            &= 0 \\
+            &= 0
   \end{align*}
 
   ตอบ $\boxed{1)}$
@@ -1131,12 +1208,10 @@ What is the expected value of $X$ if $X$ follows $\text{Binomial}(10, 0.8)$?
   \begin{align*}
     E[X] &= np \\
           &= 10(0.8) \\
-          &= 8 \\
+          &= 8
   \end{align*}
   ตอบ $\boxed{1)}$
 \end{solutionbox}
-
-\newpage
 
 \begin{problembox}{Problem 48}
 If $X \sim \text{Binomial}(5, 0.5)$, calculate $P(X = 3)$.
@@ -1181,8 +1256,7 @@ Given $X \sim \text{Bernoulli}(0.3)$. Calculate $\text{Var}(X + X)$.
     Var(X + X) &= Var(2X) \\
                &= 2^2Var(X)
   \end{align*}
-  \textbf{(มีต่อหน้าถัดไป...)}
-  \newpage
+  
   ทำการหาค่า $Var(X)$ โดยการคำนวณจากสิ่งที่โจทย์กำหนดให้ โดยเราทราบว่าเป็น Bernoulli distribution และ $p=0.3$ โดยคำนวณได้จาก
   \begin{align*}
     Var(X) &= 0.3(1-0.3) \\
@@ -1190,7 +1264,7 @@ Given $X \sim \text{Bernoulli}(0.3)$. Calculate $\text{Var}(X + X)$.
            &= 0.21 \\
     Var(2X) &= 2^2Var(X) \\
             &= 4(0.21) \\
-            &= 0.84 \\
+            &= 0.84
   \end{align*}
 
   ตอบ $\boxed{4)}$

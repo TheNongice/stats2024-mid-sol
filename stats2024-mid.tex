@@ -547,6 +547,41 @@ There are 5 men and 5 women in a class. They want to select 4 students to attend
 
 \newpage
 
+\begin{problembox}{Problem 12}
+Mick tosses 7 coins. What is the probability that there are at least 2 heads and at least 2 tails?
+ 
+\begin{choices}
+\item $7/8$
+\item $15/16$
+\item $57/64$
+\item $113/128$
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  จากโจทย์กำหนดทำให้เราทราบว่า $n(S) = 2^7 = 128$ วิธี โดยวิธีการหาจำนวนผลลัพธ์ที่สนใจสำหรับกรณีหาของที่ต้องออกลักษณะ\textbf{อย่างน้อย}\textbf{/}\textbf{อย่างมาก}
+  มีวิธีการหาอยู่ 2 รูปแบบนั่นคือการหาด้วยวิธี Complement (เข้าใจได้ง่ายที่สุดและสับสนน้อยที่สุด) กับหาโดยนับกรณีที่ถูกต้องจริง ๆ (ต้องกังวลปัญหา Overcounting และการแบ่งกรณีซับซ้อน)
+  โดยใน Solution นี้จะเฉลยในรูปแบบของวิธี Complement ซึ่งคำนวณได้จาก...
+  \begin{align*}
+    n(\text{กรณีที่สนใจ}) = n(\text{วิธีจัดกรณีไม่มีข้อจำกัด}) - \sum_{k=1}^{n(\text{กรณีที่ผิด})} n(\text{กรณีที่ผิด}_k)
+  \end{align*}
+  ในที่นี้มีกรณีที่ผิดกฏอยู่ 4 แบบ ซึ่งสามารถแบ่งและคำนวณได้ในลักษณะต่อไปนี้
+  \begin{align*}
+    \text{กรณีไม่ปรากฏ ``หัว" เลย} &= \binom{7}{0} = 1 \text{ วิธี} \\
+    \text{กรณีไม่ปรากฏ ``ก้อย" เลย} &= \binom{7}{0} = 1 \text{ วิธี} \\
+    \text{กรณีปรากฏ ``หัว" เพียง 1 ครั้ง} &= \binom{7}{1} = 7 \text{ วิธี} \\
+    \text{กรณีปรากฏ ``ก้อย" เพียง 1 ครั้ง} &= \binom{7}{1} = 7 \text{ วิธี}
+  \end{align*}
+
+  ทำให้เราทราบได้ว่า $n(\text{กรณีที่สนใจ})\text{ หรือ } n(E) = 128-1-1-7-7 = 112$ วิธี
+
+  เมื่อเราทราบทั้งค่าของ $n(E), n(S)$ แล้วทำให้เราสามารถหาค่าความน่าจะเป็นได้ว่า $\frac{n(E)}{n(S)} = \frac{112}{128} = \frac{7}{8}$
+
+  ตอบ $\boxed{1)}$
+\end{solutionbox}
+
+\newpage
+
 \begin{problembox}{Problem 13}
 The CU equestrian club has 12 members. 3 of them are first-year students, 4 are second-year students, and 5 are third-year students. If we randomly select 3 club members, what is the probability that they are all in the same year?
  

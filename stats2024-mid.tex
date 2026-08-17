@@ -261,7 +261,7 @@ $\square$ C++ \hfill $\square$ Java \hfill $\square$ Both \hfill $\square$ Neith
   สามารถคำนวณได้โดยตรงนำยอดที่กรอกแต่ละแบบมาบวกได้โดยตรง ซึ่งคิดได้จาก $40+20+10 = 70$ คน
 
   \vspace{0.5cm}
-  \textbf{(มีต่อหน้าถัดไป...)}
+  \textbf{(มีต่อหน้าถัดไป)}
 
   \newpage
   \underline{\textbf{Solution-2}}
@@ -778,6 +778,8 @@ Mint rolls these dice. What is the probability that the three shown numbers are 
   ตอบ $\boxed{3)}$
 \end{solutionbox}
 
+\newpage
+
 \begin{problembox}{Problem 19}
   Among all companies in the stock market, 20\% are large companies, 30\% are medium companies, and 50\% are small companies. Last year, the stock price of 80\% of large companies, 70\% of medium companies, and 30\% of small companies went up. In total, the stock price of what percentage of companies in the stock market went up last year?
   
@@ -788,8 +790,6 @@ Mint rolls these dice. What is the probability that the three shown numbers are 
   \item 64\%
   \end{choices}
 \end{problembox}
-
-\newpage
 
 \begin{solutionbox}
 
@@ -807,7 +807,7 @@ Mint rolls these dice. What is the probability that the three shown numbers are 
   จากบริษัททั้งหมด 100 แห่งเมื่อคิดเป็นร้อยละจะทำให้เราทราบยอดร้อยละของบริษัทที่มีหุ้นเพิ่มขึ้นดังนี้
   \begin{align*}
     \frac{\text{จำนวนบริษัทที่หุ้นเพิ่มขึ้น}}{\text{จำนวนบริษัททั้งหมด}}
-    &= \frac{52}{100} = 52\% \qed
+    &= \frac{52}{100} = 52\%
   \end{align*}
 
   \underline{{\textbf{Solution-2}}}: หลักการ Law of Total Probability \& Bayes Theorem
@@ -827,6 +827,104 @@ Mint rolls these dice. What is the probability that the three shown numbers are 
   ตอบ $\boxed{1)}$
 \end{solutionbox}
 
+\newpage
+
+\groupctx{26--28}{A mobile game has a gacha (loot box) with a 20\% chance of getting a rare character. Furthermore, when pulling 2 consecutive rolls, if the first roll is not a rare character, then the second roll will have a chance of getting a rare character increased to 40\% (otherwise, the second roll will just have a normal rate). Fai pulls the gacha 2 times.}
+ 
+\begin{problembox}{Problem 26}
+What is the probability that her second roll is a rare character?
+ 
+\begin{choices}
+\item 28\%
+\item 32\%
+\item 36\%
+\item 40\%
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  จากสิ่งที่กำหนดทำให้ทราบว่าโอกาสที่ได้จะได้ตัวละครแรร์คือ 20\% แสดงว่าโอกาสที่จะไม่ได้แรร์คือ 80\%
+  หากเราสุ่มกาชา 2 ครั้งโดยที่ครั้งแรกไม่ได้แรร์ จะทำให้โอกาสได้แรร์ในการสุ่มครั้งที่ 2 เพิ่มขึ้นเป็น 40\% ทันที
+
+  โจทย์ต้องการทราบความน่าจะเป็นเมื่อการสุ่มครั้งที่ 2 จะได้ตัวละครแรร์นั้น จะต้องพิจารณาถึงกรณีย่อยเพื่อให้คำนวณได้ดังนี้
+  \begin{align*}
+    \text{กรณีครั้งที่ 1 และ 2 ได้แรร์} &= 0.2 \times 0.2 = 0.04 \\
+    \text{กรณีครั้งที่ 1 ไม่แรร์แต่ครั้งที่ 2 ได้แรร์} &= 0.8 \times 0.4 = 0.32
+  \end{align*}
+  
+  $\therefore$ โอกาสที่รอบ 2 จะสุ่มแล้วได้ตัวละครแรร์คิดเป็น $0.04+0.32=0.36$ $(\text{หรือ } 36\%)$
+
+  ตอบ $\boxed{3)}$
+\end{solutionbox}
+
+\begin{problembox}{Problem 27}
+If her second roll is a rare character, what is the probability that her first roll is also a rare character?
+ 
+\begin{choices}
+\item $1/6$
+\item $1/7$
+\item $1/8$
+\item $1/9$
+\end{choices}
+\end{problembox}
+ 
+\begin{solutionbox}
+  \begin{flushleft}
+  $\begin{aligned}
+    \text{กำหนดให้ } F &:= \text{ครั้งที่ 1 ได้ตัวละครแรร์} \\
+    S &:= \text{ครั้งที่ 2 ได้ตัวละครแรร์}
+  \end{aligned}$
+  \end{flushleft}
+
+  จากสิ่งที่โจทย์ถามตอนนี้เราทราบ $P(S)=0.36$ แต่โจทย์ต้องการทราบค่าของ $P(F|S)$ สามารถหาได้โดยใช้ Bayes Theorem จากการคำนวณดังนี้
+  \begin{align*}
+      P(F|S) &= \frac{P(S|F)P(F)}{P(S)} = \frac{P(F \cap S)}{P(S)} \\
+             &= \frac{0.04}{0.36} \\
+             &= 0.11\overline{1} \text{ (หรือ $\frac{1}{9}$)}
+  \end{align*}
+
+  เหตุผลที่เราเลือกหยิบ $P(F \cap S) = 0.04$ ได้นั่นเพราะความหมายคือกรณีที่ทั้ง $P$ และ $S$ ได้ตัวละครแรร์พร้อมกัน
+  ซึ่งมีค่าเท่ากับ $0.04$ ตามที่ได้อธิบายหลักการคำนวณไว้ใน Solution ข้อที่ 27.
+
+  ตอบ $\boxed{4)}$
+\end{solutionbox}
+
+\begin{problembox}{Problem 28}
+If her second roll is not a rare character, what is the probability that her first roll is a rare character?
+ 
+\begin{choices}
+\item $1/2$
+\item $1/3$
+\item $1/4$
+\item $1/5$
+\end{choices}
+\end{problembox}
+
+\begin{solutionbox}
+  \begin{flushleft}
+  $\begin{aligned}
+    \text{กำหนดให้ } F &:= \text{ครั้งที่ 1 ได้ตัวละครแรร์} \\
+    S &:= \text{ครั้งที่ 2 ได้ตัวละครแรร์}
+  \end{aligned}$
+  \end{flushleft}
+
+  จากสิ่งที่โจทย์ถามตอนนี้เราทราบ $P(S')=1-0.36=0.64$ แต่โจทย์ต้องการทราบค่าของ $P(F|S')$ สามารถหาได้โดยใช้ Bayes Theorem จากการคำนวณดังนี้
+  \begin{align*}
+      P(F|S') &= \frac{P(S'|F)P(F)}{P(S')} = \frac{P(F \cap S')}{P(S)}
+  \end{align*}
+
+  แต่ตอนนี้เรายังไม่ทราบค่าของ $P(F \cap S')$ ซึ่งมีความหมายคือการสุ่มครั้งที่ 1 ได้แรร์แต่ครั้งที่ 2 ไม่ได้แรร์ซึ่งสามารถคำนวณได้เป็น $0.2 \times 0.8 = 0.16$
+  ทำให้เราสามารถหยิบมาคำนวณต่อโดยใช้หลักการของ Bayes Theorem ดังนี้
+  \begin{align*}
+      P(F|S') &= \frac{P(F \cap S')}{P(S)} \\
+              &= \frac{0.16}{0.64} \\
+              &= 0.25 \text{ (หรือ $\frac{1}{4}$)}
+  \end{align*}
+  ตอบ $\boxed{3)}$
+\end{solutionbox}
+
+\newpage
+
 \groupctx{29--30}{Students in a particular university are either in the CEDT or CP program. 60\% of CEDT students and 30\% of CP students can write JavaScript. Overall, 48\% of students in this university can write JavaScript.}
  
 \begin{problembox}{Problem 29}
@@ -839,8 +937,6 @@ If a student can write JavaScript, what is the probability that this student is 
 \item $6/7$
 \end{choices}
 \end{problembox}
-
-\newpage
 
 \begin{solutionbox}
   \begin{flushleft}
@@ -1201,6 +1297,8 @@ Given a random variable $X$ and $Y = X^2$. Assume that $E(X) = 5$ and $E(Y) = 25
   ตอบ $\boxed{1)}$
 \end{solutionbox}
  
+\newpage
+
 \begin{problembox}{Problem 44}
 Given random variable $X$ with $E(X) = 5$ and $\text{Var}(X) = 2$. Find $E(X + 2X)$.
  
@@ -1248,6 +1346,8 @@ What is the expected value of $X$ if $X$ follows $\text{Binomial}(10, 0.8)$?
   ตอบ $\boxed{1)}$
 \end{solutionbox}
 
+\newpage
+
 \begin{problembox}{Problem 48}
 If $X \sim \text{Binomial}(5, 0.5)$, calculate $P(X = 3)$.
  
@@ -1269,6 +1369,8 @@ If $X \sim \text{Binomial}(5, 0.5)$, calculate $P(X = 3)$.
   \end{align*}
   ตอบ $\boxed{3)}$
 \end{solutionbox}
+
+\newpage
 
 \begin{problembox}{Problem 49}
 Given $X \sim \text{Bernoulli}(0.3)$. Calculate $\text{Var}(X + X)$.
